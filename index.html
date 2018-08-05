@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>法院智能管理柜</title>
+	<!--rem单位设置-->
+	<script>
+		; (function (win, doc) {
+			var root = doc.documentElement ||
+				doc.querySelector("html"),
+				resizeEvent = "orientationchange" in window ? "orientationchange" : "resize",
+				rootFontSize = parseFloat(win.getComputedStyle(root)["fontSize"] || 16);
+			function setFontSize() {
+				root.style.fontSize = root.clientWidth / rootFontSize + "rem";
+				if (doc.readyState === 4) {
+					doc.body.style.fontSize = "16px";
+				} else {
+					doc.addEventListener("DOMContentLoaded", function () {
+						doc.body.style.fontSize = "16px";
+					})
+				}
+			}
+
+			setFontSize();
+			win.addEventListener(resizeEvent, setFontSize);
+		})(window, document);
+	</script>
+</head>
+
+<body ontouchstart>
+	<!--添加ontouchstart事件,修复:active伪类失效的bug-->
+	<div id="app"></div>
+	<!-- built files will be auto injected -->
+	<!--使用微信js-sdk-->
+	<script src="./static/jweixin-1.2.0.js"></script>
+</body>
+
+</html>

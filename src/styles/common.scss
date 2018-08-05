@@ -1,0 +1,28 @@
+$design-width: 750;  // 定义设计稿的宽度
+
+/* 字体颜色定义 */
+$text-main-color: #333;         // 文本主色彩
+$text-secondary-color: #999;    // 文本次级色彩
+$text-active-color: #3782E6;    // 文本高亮色彩
+
+@function rem($distance) {
+   @return $distance / $design-width + rem;
+}
+
+@mixin border-bottom {
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #f0f0f0;
+    transform: scaleY(0.5);
+  }
+}
+
+.active {
+  opacity: 0.8;
+}
+
